@@ -11,12 +11,9 @@ public class HomePage {
     private final By personalAccountBlackButton=By.xpath(".//a[@href='/account']");
     private final By personalAccountBlueButton=By.xpath(".//button[text()='Войти в аккаунт']");
     private final By makeOrderButton=By.xpath(".//button[text()='Оформить заказ']");
-    private final By bunsTab =By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'][1]");
+    private final By bunsTab =By.xpath(".//section[@Class='BurgerIngredients_ingredients__1N8v2']/div[1]/div[1]");
     private final By saucesTab =By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']/div/div[2]");
     private final By fillingsTab =By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']/div/div[3]");
-    private final By bunsText=By.xpath(".//h2[text()='Булки']");
-    private final By saucesText=By.xpath(".//h2[text()='Соусы']");
-    private final By fillingsText=By.xpath(".//h2[text()='Начинки']");
 
     public HomePage(WebDriver driver){
         this.driver=driver;
@@ -54,7 +51,7 @@ public class HomePage {
 
     @Step("Click 'Buns' tab")
     public void clickBunsTab(){
-        driver.findElement(bunsTab).click();
+        driver.findElement(bunsTab);
     }
 
     @Step("Click 'Sauces' tab")
@@ -67,18 +64,20 @@ public class HomePage {
         driver.findElement(fillingsTab).click();
     }
 
-    @Step("Check that text 'Булки' is displayed")
-    public boolean bunsTextIsDisplayed(){
-        return driver.findElement(bunsText).isDisplayed();
+    @Step("Check that Buns tab is current tab")
+    public boolean checkBunsTabIsCurrent(){
+        String extractClass= driver.findElement(bunsTab).getAttribute("class");
+        return extractClass.contains("tab_tab_type_current__2BEPc");
     }
 
-    @Step("Check that text 'Соусы' is displayed")
-    public boolean saucesTextIsDisplayed(){
-        return driver.findElement(saucesText).isDisplayed();
+    @Step("Check that Sauces tab is current tab")
+    public boolean checkSaucesTabIsCurrent(){
+        String extractClass= driver.findElement(saucesTab).getAttribute("class");
+        return extractClass.contains("tab_tab_type_current__2BEPc");
     }
-
-    @Step("Check that text 'Начинки' is displayed")
-    public boolean fillingsTextIsDisplayed(){
-        return driver.findElement(fillingsText).isDisplayed();
+    @Step("Check that Ingredients tab is current tab")
+    public boolean checkFillingsTabIsCurrent(){
+        String extractClass= driver.findElement(fillingsTab).getAttribute("class");
+        return extractClass.contains("tab_tab_type_current__2BEPc");
     }
 }

@@ -40,7 +40,7 @@ public class ConstructorTest {
         Helper.signInTestUser(driver);
         HomePage homePage=new HomePage(driver);
         homePage.clickBunsTab();
-        assertTrue(homePage.bunsTextIsDisplayed());
+        assertTrue(homePage.checkBunsTabIsCurrent());
     }
 
     @DisplayName("Go to \"Sauces\" tab with authorization is successful")
@@ -50,7 +50,7 @@ public class ConstructorTest {
         Helper.signInTestUser(driver);
         HomePage homePage=new HomePage(driver);
         homePage.clickSaucesTab();
-        assertTrue(homePage.saucesTextIsDisplayed());
+        assertTrue(homePage.checkSaucesTabIsCurrent());
     }
 
     @DisplayName("Go to \"Fillings\" tab with authorization is successful")
@@ -60,7 +60,7 @@ public class ConstructorTest {
         Helper.signInTestUser(driver);
         HomePage homePage=new HomePage(driver);
         homePage.clickFillingsTab();
-        assertTrue(homePage.fillingsTextIsDisplayed());
+        assertTrue(homePage.checkFillingsTabIsCurrent());
     }
 
     @DisplayName("Go to \"Buns\" tab without authorization is successful")
@@ -69,7 +69,7 @@ public class ConstructorTest {
     public void goToBunsTabWithoutAuthorizationIsSuccessful (){
         HomePage homePage=new HomePage(driver);
         homePage.clickBunsTab();
-        assertTrue(homePage.bunsTextIsDisplayed());
+        assertTrue(homePage.checkBunsTabIsCurrent());
     }
 
     @DisplayName("Go to \"Sauces\" tab without authorization is successful")
@@ -78,7 +78,7 @@ public class ConstructorTest {
     public void goToSaucesTabWithoutAuthorizationIsSuccessful (){
         HomePage homePage=new HomePage(driver);
         homePage.clickSaucesTab();
-        assertTrue(homePage.saucesTextIsDisplayed());
+        assertTrue(homePage.checkSaucesTabIsCurrent());
     }
 
     @DisplayName("Go to \"Fillings\" tab without authorization is successful")
@@ -87,7 +87,7 @@ public class ConstructorTest {
     public void goToFillingsTabWithoutAuthorizationIsSuccessful (){
         HomePage homePage=new HomePage(driver);
         homePage.clickFillingsTab();
-        assertTrue(homePage.fillingsTextIsDisplayed());
+        assertTrue(homePage.checkFillingsTabIsCurrent());
     }
 
     @After

@@ -25,12 +25,12 @@ public class Helper {
 
     public static WebDriver connectWebDriver (String browser) throws Exception{
         if (browser.equals("Chrome")) {
-            System.setProperty("webdriver.chrome.driver","C:\\myJavaProjects\\Diplom\\Diplom_3\\src\\test\\java\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver",".\\src\\test\\java\\chromedriver.exe");
             ChromeOptions options=new ChromeOptions();
             options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
             return new ChromeDriver(options);
         } else if (browser.equals("Yandex")) {
-            System.setProperty("webdriver.chrome.driver","C:\\myJavaProjects\\Diplom\\Diplom_3\\src\\test\\java\\yandexdriver.exe");
+            System.setProperty("webdriver.chrome.driver",".\\src\\test\\java\\yandexdriver.exe");
             ChromeOptions options=new ChromeOptions();
             options.setBinary("C:/Users/User/AppData/Local/Yandex/YandexBrowser/Application/browser.exe");
             return new ChromeDriver(options);

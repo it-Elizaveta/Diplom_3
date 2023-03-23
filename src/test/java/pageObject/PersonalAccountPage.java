@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PersonalAccountPage {
     private final WebDriver driver;
-    private final By nameField=By.xpath(".//li[1]//input");
-    private final By loginField=By.xpath(".//li[2]//input");
+    private final By nameField=By.xpath(".//li[@class='Profile_profileListItem__2th0t mb-6'][1]//input");
+    private final By loginField=By.xpath(".//li[@class='Profile_profileListItem__2th0t mb-6'][2]//input");
     private final By signoutButton=By.xpath(".//button[text()='Выход']");
     private final By constructorButton=By.xpath(".//header//li[1]//a");
     private final By logo =By.xpath(".//header//div[@class='AppHeader_header__logo__2D0X2']/a");
